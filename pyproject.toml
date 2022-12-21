@@ -10,9 +10,10 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.8"
 requests = "^2.28.1"
-bs4 = "^0.0.1"
+beautifulsoup4 = "^4.9.3"
 dataclasses = "^0.6"
 slackweb = "^1.0.5"
+pyyaml = "^6.0"
 
 
 [build-system]
