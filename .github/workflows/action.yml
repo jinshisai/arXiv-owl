@@ -31,7 +31,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run arXiv query
-        run: python arxiv_query
+        run: python arxiv_query.py
         env:
           SLACK_ID: ${{ secrets.SLACK_ID }}
           LINE_TOKEN: ${{ secrets.LINE_TOKEN }}
