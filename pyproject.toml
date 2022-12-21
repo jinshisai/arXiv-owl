@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "arxiv-owl"
+version = "0.1.0"
+description = "Deliver arxiv articles"
+authors = ["jinshisai <jn.insa.sai@gmail.com>"]
+license = "MIT License"
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.28.1"
+bs4 = "^0.0.1"
+dataclasses = "^0.8"
+slackweb = "^1.0.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

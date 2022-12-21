@@ -25,13 +25,26 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v3
         with:
           python-version: 3.8
 
+      # Install poetry
+      - name: Install poetry
+        run: |
+          curl -sSL https://install.python-poetry.org -o install-poetry.py
+          export POETRY_HOME=/opt/poetry
+          python3 install-poetry.py --version 1.1.15
+          $POETRY_HOME/bin/poetry --version
+
+      # Install dependencies
+      - name: Install dependencies
+        run: /opt/poetry/bin/poetry install
+
       # Runs a single command using the runners shell
       - name: Run arXiv query
-        run: python arxiv_query.py
+        run:
+          /opt/poetry/bin/poetry run python arxiv_query.py
         env:
           SLACK_ID: ${{ secrets.SLACK_ID }}
           LINE_TOKEN: ${{ secrets.LINE_TOKEN }}
