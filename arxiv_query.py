@@ -71,7 +71,7 @@ def get_config() -> dict:
 
 def arxiv_query(subject='Physics', days=2, 
     include_cross_listed=True, date_type='submitted_date',
-    abstract=True, pages=100, score_threshold=0.0,
+    abstract=True, pages=200, score_threshold=0.0,
     keywords={}, subcat='astro-ph', slack_id = None,):
     '''
 
@@ -288,7 +288,7 @@ def send2app(text: str, slack_id: str, line_token: str) -> None:
 
 # main
 def main():
-    arxiv_query()
+    arxiv_query(days=2)
 
 
 if __name__ == '__main__':
